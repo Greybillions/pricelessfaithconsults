@@ -123,7 +123,7 @@ export function Resources() {
 
               <ArrowUpRight
                 size={20}
-                className='text-white/40 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-light'
+                className='hidden md:flex text-white/40 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-light'
               />
             </article>
           ))}

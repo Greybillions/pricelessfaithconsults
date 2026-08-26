@@ -1,6 +1,12 @@
 'use client';
 
-import { ArrowUpRight } from 'lucide-react';
+import {
+  Award,
+  BadgeCheck,
+  HeartHandshake,
+  LifeBuoy,
+  Wrench,
+} from 'lucide-react';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,33 +16,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 const reasons = [
   {
-    number: '01',
     title: 'Experience',
     description:
       'Practical knowledge and experience in education and professional development.',
+    icon: BadgeCheck,
   },
   {
-    number: '02',
     title: 'Practical Solutions',
     description:
       'Resources and training designed to work in real educational environments.',
+    icon: Wrench,
   },
   {
-    number: '03',
     title: 'Professional Excellence',
     description:
       'A commitment to quality, continuous learning, and professional growth.',
+    icon: Award,
   },
   {
-    number: '04',
     title: 'Values-Based Approach',
     description: 'Integrity, excellence, and service guide the way we work.',
+    icon: HeartHandshake,
   },
   {
-    number: '05',
     title: 'Continuous Support',
     description:
       'We believe in building long-term relationships, not just offering one-off services.',
+    icon: LifeBuoy,
   },
 ];
 
@@ -77,10 +83,11 @@ export function WhyUs() {
       className='border-b border-black/10 bg-background py-24 sm:py-32'
     >
       <div className='mx-auto max-w-7xl px-5 sm:px-8 lg:px-10'>
+        {/* Heading */}
         <div className='why-heading grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24'>
           <div>
             <span className='text-xs font-semibold uppercase tracking-[0.22em] text-gold'>
-              05 — Why Choose Us
+              Why Choose Us
             </span>
 
             <div className='mt-5 h-px w-12 bg-gold' />
@@ -95,32 +102,37 @@ export function WhyUs() {
           </div>
         </div>
 
+        {/* Reasons */}
         <div className='why-list mt-20 border-t border-black/10'>
-          {reasons.map((reason) => (
-            <article
-              key={reason.number}
-              className='why-item group grid gap-5 border-b border-black/10 py-8 lg:grid-cols-[100px_1fr_1.2fr_auto] lg:items-center lg:gap-12'
-            >
-              <span className='font-serif text-sm text-gold'>
-                {reason.number}
-              </span>
+          {reasons.map((reason) => {
+            const Icon = reason.icon;
 
-              <h3 className='font-serif text-2xl text-primary sm:text-3xl'>
-                {reason.title}
-              </h3>
+            return (
+              <article
+                key={reason.title}
+                className='why-item group grid gap-6 border-b border-black/10 py-8 lg:grid-cols-[70px_1fr_1.2fr] lg:items-center lg:gap-10'
+              >
+                {/* Icon */}
+                <div className='flex h-11 w-11 items-center justify-center border border-black/10 transition-all duration-300 group-hover:border-gold group-hover:bg-gold/10'>
+                  <Icon
+                    size={19}
+                    strokeWidth={1.5}
+                    className='text-primary transition-colors duration-300 group-hover:text-gold'
+                  />
+                </div>
 
-              <p className='max-w-xl text-sm leading-7 text-muted sm:text-base'>
-                {reason.description}
-              </p>
+                {/* Title */}
+                <h3 className='font-serif text-2xl text-primary transition-colors duration-300 group-hover:text-gold sm:text-3xl'>
+                  {reason.title}
+                </h3>
 
-              <div className='flex h-10 w-10 shrink-0 items-center justify-center border border-black/10 transition-all duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-white'>
-                <ArrowUpRight
-                  size={16}
-                  className='transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
-                />
-              </div>
-            </article>
-          ))}
+                {/* Description */}
+                <p className='max-w-xl text-sm leading-7 text-muted sm:text-base'>
+                  {reason.description}
+                </p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

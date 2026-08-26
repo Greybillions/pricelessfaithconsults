@@ -148,14 +148,6 @@ export function Services() {
                   ))}
                 </ul>
               </div>
-
-              {/* Arrow */}
-              <div className='flex h-11 w-11 shrink-0 items-center justify-center border border-black/10 text-primary transition-all duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-white'>
-                <ArrowUpRight
-                  size={17}
-                  className='transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
-                />
-              </div>
             </article>
           ))}
         </div>
