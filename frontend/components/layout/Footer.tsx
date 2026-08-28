@@ -56,17 +56,18 @@ export function Footer() {
 
             <div className='mt-6 flex flex-col gap-4 text-sm text-white/60'>
               <a
-                href='mailto:info@pricelessfaithconsult.com'
+                href='mailto:pricelessfaithconsult@gmail.com
+'
                 className='transition-colors hover:text-white'
               >
-                info@pricelessfaithconsult.com
+                pricelessfaithconsult@gmail.com
               </a>
 
               <a
-                href='tel:+2340000000000'
+                href='tel:+2348106396300'
                 className='transition-colors hover:text-white'
               >
-                +234 000 000 0000
+                +234 810 639 6300
               </a>
             </div>
           </div>

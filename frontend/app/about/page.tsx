@@ -1,20 +1,23 @@
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { AboutHero } from '@/components/about/AboutHero';
+import { WhoWeAre } from '@/components/about/WhoWeAre';
+import { AboutValues } from '@/components/about/AboutValues';
+import { AboutCTA } from '@/components/about/AboutCTA';
+
 export default function AboutPage() {
   return (
-    <main className='min-h-screen px-6 py-24'>
-      <div className='mx-auto max-w-5xl'>
-        <p className='mb-4 text-sm uppercase tracking-[0.25em] text-[#b68a45]'>
-          About Priceless Faith Consult
-        </p>
+    <>
+      <Navbar />
 
-        <h1 className='max-w-3xl font-serif text-5xl leading-tight text-[#211f1c] md:text-7xl'>
-          Education built around people, purpose and progress.
-        </h1>
+      <main>
+        <AboutHero />
+        <WhoWeAre />
+        <AboutValues />
+        <AboutCTA />
+      </main>
 
-        <p className='mt-8 max-w-2xl text-lg leading-8 text-[#6f6a62]'>
-          Priceless Faith Consult provides practical education, training,
-          consultancy, and professional development solutions.
-        </p>
-      </div>
-    </main>
+      <Footer />
+    </>
   );
 }

@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body suppressHydrationWarning data-scroll-behavior='smooth'>
+        {children}
+      </body>
     </html>
   );
 }
